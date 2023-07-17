@@ -46,7 +46,7 @@ describe "/square/new" do
     visit "/square/new"
 
     # click_button "Calculate square"
-    find("button", :text => /Calculate\s+square/i ).click
+    find("button", :text => /Calculate\s+square/i).click
 
     expect(page).to_not have_current_path("/square/new", ignore_query: true),
       "Expected form to submit to a different Route, but didn't."
@@ -74,9 +74,9 @@ describe "/square/new" do
         "Expected label’s for attribute to be set to a non empty value, was '#{for_attribute}' instead."
     else
       all_inputs = all("input")
-  
+
       all_input_ids = all_inputs.map { |input| input[:id] }.compact
-  
+
       expect(all_input_ids.count(for_attribute)).to eq(1),
         "Expected label’s for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found 0 or more than 1."
     end
@@ -91,12 +91,12 @@ describe "/square/new" do
     number_label = find("label", :text => /Enter\s+a\s+number/i)
     for_attribute = number_label[:for]
     begin
-    number_input = find("##{for_attribute}")
+      number_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     number_input.set(5)
-    find("button", :text => /Calculate\s+square/i ).click
+    find("button", :text => /Calculate\s+square/i).click
 
     expect(page).to have_content(/25/)
   end
@@ -110,13 +110,13 @@ describe "/square/new" do
     number_label = find("label", :text => /Enter\s+a\s+number/i)
     for_attribute = number_label[:for]
     begin
-    number_input = find("##{for_attribute}")
+      number_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     number_input.set(42.42)
 
-    find("button", :text => /Calculate\s+square/i ).click
+    find("button", :text => /Calculate\s+square/i).click
 
     expect(page).to have_content(1799.4564)
   end
@@ -144,7 +144,7 @@ describe "/square_root/new" do
     visit "/square_root/new"
 
     expect(page).to have_css("label", text: /Enter a number/i),
-    "Expected to find a 'label' element with specified text, but didn't find one."
+                    "Expected to find a 'label' element with specified text, but didn't find one."
   end
 end
 
@@ -170,8 +170,7 @@ describe "/square_root/new" do
 
     # click_button "Calculate square root"
 
-    find("button", :text => /Calculate\s+square\s+root/i ).click
-    
+    find("button", :text => /Calculate\s+square\s+root/i).click
 
     expect(page).to_not have_current_path("/square_root/new", ignore_query: true),
       "Expected form to submit to a different Route, but didn't."
@@ -198,9 +197,9 @@ describe "/square_root/new" do
         "Expected label’s for attribute to be set to a non empty value, was '#{for_attribute}' instead."
     else
       all_inputs = all("input")
-  
+
       all_input_ids = all_inputs.map { |input| input[:id] }.compact
-  
+
       expect(all_input_ids.count(for_attribute)).to eq(1),
         "Expected label’s for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found 0 or more than 1."
     end
@@ -215,13 +214,13 @@ describe "/square_root/new" do
     number_label = find("label", :text => /Enter\s+a\s+number/i)
     for_attribute = number_label[:for]
     begin
-    number_input = find("##{for_attribute}")
+      number_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     number_input.set(5)
     # click_button "Calculate square root"
-    find("button", :text => /Calculate\s+square\s+root/i ).click
+    find("button", :text => /Calculate\s+square\s+root/i).click
 
     expect(page).to have_content(2.236)
   end
@@ -237,12 +236,12 @@ describe "/square_root/new" do
     number_label = find("label", :text => /Enter\s+a\s+number/i)
     for_attribute = number_label[:for]
     begin
-    number_input = find("##{for_attribute}")
+      number_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     number_input.set(42.42)
-    find("button", :text => /Calculate\s+square\s+root/i ).click
+    find("button", :text => /Calculate\s+square\s+root/i).click
 
     expect(page).to have_content(6.513)
   end
@@ -310,7 +309,7 @@ describe "/payment/new" do
     visit "/payment/new"
 
     # click_button "Calculate monthly payment"
-    find("button", :text => /Calculate\s+monthly\s+payment/i ).click
+    find("button", :text => /Calculate\s+monthly\s+payment/i).click
 
     expect(page).to_not have_current_path("/payment/new", ignore_query: true),
       "Expected form to submit to a different Route, but didn't."
@@ -333,32 +332,32 @@ describe "/payment/new" do
     apr_label = find("label", :text => /APR/i)
     for_attribute = apr_label[:for]
     begin
-    apr_input = find("##{for_attribute}")
+      apr_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
     end
     apr_input.set(3.24)
     # fill_in "Number of years", with: 5
     years_label = find("label", :text => /Number\s+of\s+years/i)
     for_attribute = years_label[:for]
     begin
-    years_input = find("##{for_attribute}")
+      years_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
     end
     years_input.set(5)
     # fill_in "Principal", with: 14_600
     principal_label = find("label", :text => /Principal/i)
     for_attribute = principal_label[:for]
     begin
-    principal_input = find("##{for_attribute}")
+      principal_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     principal_input.set(14_600)
 
     # click_button "Calculate monthly payment"
-    find("button", :text => /Calculate\s+monthly\s+payment/i ).click
+    find("button", :text => /Calculate\s+monthly\s+payment/i).click
 
     expect(page).to have_content(263.90)
   end
@@ -374,32 +373,32 @@ describe "/payment/new" do
     apr_label = find("label", :text => /APR/i)
     for_attribute = apr_label[:for]
     begin
-    apr_input = find("##{for_attribute}")
+      apr_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
     end
     apr_input.set(4.10)
     # fill_in "Number of years", with: 5
     years_label = find("label", :text => /Number\s+of\s+years/i)
     for_attribute = years_label[:for]
     begin
-    years_input = find("##{for_attribute}")
+      years_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
     end
     years_input.set(30)
     # fill_in "Principal", with: 14_503
     principal_label = find("label", :text => /Principal/i)
     for_attribute = principal_label[:for]
     begin
-    principal_input = find("##{for_attribute}")
+      principal_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     principal_input.set(250_000)
 
     # click_button "Calculate monthly payment"
-    find("button", :text => /Calculate\s+monthly\s+payment/i ).click
+    find("button", :text => /Calculate\s+monthly\s+payment/i).click
 
     # expect(page).to have_content("$1,208.00")
     expect(page).to have_content(/\$\d+,?\d*?\.\d\d/)
@@ -416,32 +415,32 @@ describe "/payment/new" do
     apr_label = find("label", :text => /APR/i)
     for_attribute = apr_label[:for]
     begin
-    apr_input = find("##{for_attribute}")
+      apr_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
     end
     apr_input.set(3.24)
     # fill_in "Number of years", with: 5
     years_label = find("label", :text => /Number\s+of\s+years/i)
     for_attribute = years_label[:for]
     begin
-    years_input = find("##{for_attribute}")
+      years_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
     end
     years_input.set(5)
     # fill_in "Principal", with: 14_503
     principal_label = find("label", :text => /Principal/i)
     for_attribute = principal_label[:for]
     begin
-    principal_input = find("##{for_attribute}")
+      principal_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     principal_input.set(14_503)
 
     # click_button "Calculate monthly payment"
-    find("button", :text => /Calculate\s+monthly\s+payment/i ).click
+    find("button", :text => /Calculate\s+monthly\s+payment/i).click
 
     expect(page).to have_content("$262.15")
   end
@@ -457,32 +456,32 @@ describe "/payment/new" do
     apr_label = find("label", :text => /APR/i)
     for_attribute = apr_label[:for]
     begin
-    apr_input = find("##{for_attribute}")
+      apr_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
     end
     apr_input.set(4.10)
     # fill_in "Number of years", with: 5
     years_label = find("label", :text => /Number\s+of\s+years/i)
     for_attribute = years_label[:for]
     begin
-    years_input = find("##{for_attribute}")
+      years_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
     end
     years_input.set(30)
     # fill_in "Principal", with: 14_503
     principal_label = find("label", :text => /Principal/i)
     for_attribute = principal_label[:for]
     begin
-    principal_input = find("##{for_attribute}")
+      principal_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     principal_input.set(250_000)
 
     # click_button "Calculate monthly payment"
-    find("button", :text => /Calculate\s+monthly\s+payment/i ).click
+    find("button", :text => /Calculate\s+monthly\s+payment/i).click
 
     expect(page).to have_content("$1,208.00")
   end
@@ -498,31 +497,30 @@ describe "/payment/new" do
     apr_label = find("label", :text => /APR/i)
     for_attribute = apr_label[:for]
     begin
-    apr_input = find("##{for_attribute}")
+      apr_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
     end
     apr_input.set(4.12345)
     years_label = find("label", :text => /Number\s+of\s+years/i)
     for_attribute = years_label[:for]
     begin
-    years_input = find("##{for_attribute}")
+      years_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
     end
     years_input.set(30)
     principal_label = find("label", :text => /Principal/i)
     for_attribute = principal_label[:for]
     begin
-    principal_input = find("##{for_attribute}")
+      principal_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     principal_input.set(250_000)
 
-
     # click_button "Calculate monthly payment"
-    find("button", :text => /Calculate\s+monthly\s+payment/i ).click
+    find("button", :text => /Calculate\s+monthly\s+payment/i).click
 
     # expect(page).to have_content(4.1235)
     expect(page).to have_content(/\d+\.\d{4}/)
@@ -536,30 +534,30 @@ describe "/payment/new" do
     apr_label = find("label", :text => /APR/i)
     for_attribute = apr_label[:for]
     begin
-    apr_input = find("##{for_attribute}")
+      apr_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the APR <label> but didn't find one."
     end
     apr_input.set(4.12345)
     years_label = find("label", :text => /Number\s+of\s+years/i)
     for_attribute = years_label[:for]
     begin
-    years_input = find("##{for_attribute}")
+      years_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of the 'Number of years' <label> but didn't find one."
     end
     years_input.set(30)
     principal_label = find("label", :text => /Principal/i)
     for_attribute = principal_label[:for]
     begin
-    principal_input = find("##{for_attribute}")
+      principal_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     principal_input.set(250_000)
 
     # click_button "Calculate monthly payment"
-    find("button", :text => /Calculate\s+monthly\s+payment/i ).click
+    find("button", :text => /Calculate\s+monthly\s+payment/i).click
 
     # expect(page).to have_content("4.1235%")
     expect(page).to have_content(/\d+\.\d{4}%/)
@@ -623,22 +621,22 @@ describe "/random/new" do
     min_label = find("label", :text => /Minimum/i)
     for_attribute = min_label[:for]
     begin
-    min_input = find("##{for_attribute}")
+      min_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     min_input.set(1.0)
     max_label = find("label", :text => /Maximum/i)
     for_attribute = max_label[:for]
     begin
-    max_input = find("##{for_attribute}")
+      max_input = find("##{for_attribute}")
     rescue Capybara::ElementNotFound
-      expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+      expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
     end
     max_input.set(10.0)
 
     # click_button "Pick random number"
-    find("button", :text => /Pick\s+random\s+number/i ).click
+    find("button", :text => /Pick\s+random\s+number/i).click
 
     expect(page).to_not have_current_path("/random/new", ignore_query: true),
       "Expected form to submit to a route different than '/random/new' but current route was still '/random/new'"
@@ -665,9 +663,9 @@ describe "/random/new" do
         "Expected label’s for attribute to be set to a non empty value, was '#{for_attribute}' instead."
     else
       all_inputs = all("input")
-  
+
       all_input_ids = all_inputs.map { |input| input[:id] }.compact
-  
+
       expect(all_input_ids.count(for_attribute)).to eq(1),
         "Expected Minimum label’s for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found 0 or more than 1."
     end
@@ -686,9 +684,9 @@ describe "/random/new" do
         "Expected label’s for attribute to be set to a non empty value, was '#{for_attribute}' instead."
     else
       all_inputs = all("input")
-  
+
       all_input_ids = all_inputs.map { |input| input[:id] }.compact
-  
+
       expect(all_input_ids.count(for_attribute)).to eq(1),
         "Expected Maximum label’s for attribute(#{for_attribute}) to match only 1 of the ids of an <input> tag (#{all_input_ids}), but found 0 or more than 1."
     end
@@ -705,21 +703,21 @@ describe "/random/new" do
       min_label = find("label", :text => /Minimum/i)
       for_attribute = min_label[:for]
       begin
-      min_input = find("##{for_attribute}")
+        min_input = find("##{for_attribute}")
       rescue Capybara::ElementNotFound
-        expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+        expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
       end
       min_input.set(1.0)
       max_label = find("label", :text => /Maximum/i)
       for_attribute = max_label[:for]
       begin
-      max_input = find("##{for_attribute}")
+        max_input = find("##{for_attribute}")
       rescue Capybara::ElementNotFound
-        expect(false). to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
+        expect(false).to be(true), "Expected to find an <input> with an id attribute that matched the for attribute of a <label> but didn't find one."
       end
       max_input.set(10.0)
       # click_button "Pick random number"
-      find("button", :text => /Pick\s+random\s+number/i ).click
+      find("button", :text => /Pick\s+random\s+number/i).click
       # Array containing each number rendered on the random/results page
       numbers_on_page = page.text.scan(/\d+\.\d*/).map(&:to_f)
       numbers_on_page.each do |num|
