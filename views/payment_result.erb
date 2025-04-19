@@ -7,28 +7,8 @@
   <dd><%= @year %> </dd>
   <dt>Principal</dt>
   <dd><%= @pv.to_fs(:currency, { :precision => 2 }) %></dd>
+  <dt>Payment</dt>
+  <dd><%= @payment_result.to_fs(:currency, { :precision => 2 }) %></dd>
 </dl>
 
-<a href="/random/new">Pick another random number</a>
-
-
-
-
-  <dd>
-    $3.00
-  </dd>
-
-  <dt>
-    Payment
-  </dt>
-  <dd>
-    $0.09
-  </dd>
-</dl>
-
-<a href="/payment/new">
-  Calculate another payment
-</a>
-
-  </body>
-</html>
+<a href="/payment/new">Calculate another payment</a>
