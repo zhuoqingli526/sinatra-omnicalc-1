@@ -31,11 +31,23 @@ get("/square/results") do
 end
 
 get("/random/new") do
-  erb(:square_root_form)
+  erb(:random_form)
 end
 
 get("/random/results") do
-  @number = params.fetch("number")
-  @result = Math.sqrt(@number.to_f)
-  erb(:square_root_result)
+  @min = params.fetch("user_min").to_f
+  @max = params.fetch("user_max").to_f
+  @random_result = rand(@min..@max)
+  erb(:random_result)
+end
+
+get("/payment/new") do
+  erb(:payment_form)
+end
+
+get("/random/results") do
+  @min = params.fetch("user_min").to_f
+  @max = params.fetch("user_max").to_f
+  @random_result = rand(@min..@max)
+  erb(:random_result)
 end
